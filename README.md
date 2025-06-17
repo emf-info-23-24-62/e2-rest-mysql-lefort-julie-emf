@@ -8,9 +8,9 @@
 
 ## Objectifs de l'évaluation 
 - **Architecture pour la conteneurisation correctement définie**
-- **Sélection d'une composition de contenu (architecture) adaptée à la situation. [h1.1, h1.2, h1.4]** 
+- **Sélection d'une composition de contenu (architecture) adaptée à la situation.** 
 - **Application virtualisée selon les consignes**
-- **Virtualiser est une application avec la composition de conteneurs sélectionnés au sein des fins de développement qui pour la livrée/l'entreprise. [h3.1, h3.2, h3.4, h3.5]**
+- **Virtualiser est une application avec la composition de conteneurs sélectionnés au sein des fins de développement qui pour la livrée/l'entreprise.**
 - **Fonctionnalité de l'application vérifiée à l'aide d'un concept de test**
 
 ## Contexte

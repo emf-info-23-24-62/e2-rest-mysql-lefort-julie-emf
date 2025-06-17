@@ -1,0 +1,39 @@
+services:
+  # Service MYSQL
+  db:
+    #Image mysql:5.7
+    image: mysql:5.7
+    #Ports par défaut mysql
+    ports: 
+      - "3306:3306"
+    #Variables d'environnement
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass347
+      - MYSQL_DATABASE=api_example
+      - MYSQL_USER=user347
+      - MYSQL_PASSWORD=pass347
+    #Volumes pour les données et pour l'initialisation de la base
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./sql/init-db.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  # Service Node.js
+  backend:
+    # Build du Dockerfile 
+    build: .
+    # Port 3000 (node.js) et port 8080 (localhost)
+    ports:
+      - "8080:3000"
+    # Variables d'environnement
+    environment:
+      - DB_PORT=3306
+      - DB_HOST=db
+      - DB_USERNAME=root
+      - DB_USERNAME_PASSWORD=rootpass347
+      - DB_NAME=api_example
+    # Dépendance sur la db
+    depends_on:
+      - db
+# Volume pour les données mysql
+volumes:
+  mysql-data:
